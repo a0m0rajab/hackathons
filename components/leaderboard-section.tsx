@@ -1,14 +1,7 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-
-const leaderboard = [
-  { rank: "🥇", participant: "@sarah-dev", prsOpened: 7, prsAccepted: 7 },
-  { rank: "🥈", participant: "@leo-byte", prsOpened: 6, prsAccepted: 5 },
-  { rank: "🥉", participant: "@nour-js", prsOpened: 5, prsAccepted: 5 },
-  { rank: "🌸", participant: "@omar-ai", prsOpened: 4, prsAccepted: 4 },
-  { rank: "🌷", participant: "@hana-creates", prsOpened: 3, prsAccepted: 3 },
-]
+import { leaderboard } from "@/data/contributions"
 
 export function LeaderboardSection() {
   return (
@@ -16,7 +9,7 @@ export function LeaderboardSection() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-[oklch(0.45_0.15_290)]">
-            Leaderboard of Kind Coders 🌟
+            Leaderboard of contributors 🌟
           </h2>
           <p className="text-lg text-muted-foreground">
             Celebrating the amazing contributors who made this hackathon shine 💖
@@ -28,19 +21,23 @@ export function LeaderboardSection() {
             <table className="w-full">
               <thead>
                 <tr className="bg-gradient-to-r from-[oklch(0.92_0.08_290)] to-[oklch(0.90_0.10_330)]">
-                  <th className="px-6 py-4 text-left text-sm font-bold text-[oklch(0.40_0.15_290)]">Rank</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-[oklch(0.40_0.15_290)]">Participant</th>
-                  <th className="px-6 py-4 text-center text-sm font-bold text-[oklch(0.40_0.15_290)]">PRs Opened</th>
-                  <th className="px-6 py-4 text-center text-sm font-bold text-[oklch(0.40_0.15_290)]">PRs Accepted</th>
+                  <th className="px-6 py-5 text-left text-base font-bold text-[oklch(0.40_0.15_290)]">Emoji</th>
+                  <th className="px-6 py-5 text-left text-base font-bold text-[oklch(0.40_0.15_290)]">Name</th>
+                  <th className="px-6 py-5 text-left text-base font-bold text-[oklch(0.40_0.15_290)]">Participant</th>
                 </tr>
               </thead>
               <tbody>
                 {leaderboard.map((entry, index) => (
                   <tr key={index} className="border-t border-border hover:bg-[oklch(0.98_0.02_290)] transition-colors">
-                    <td className="px-6 py-5 text-3xl">{entry.rank}</td>
-                    <td className="px-6 py-5 font-semibold text-foreground">{entry.participant}</td>
-                    <td className="px-6 py-5 text-center font-bold text-primary">{entry.prsOpened}</td>
-                    <td className="px-6 py-5 text-center font-bold text-secondary">{entry.prsAccepted}</td>
+                    <td className="px-6 py-6 text-3xl">{entry.rank}</td>
+                    <td className="px-6 py-6 font-semibold text-lg text-foreground">
+                      {entry.name ? entry.name : "Anonymous"}
+                    </td>
+                    <td className="px-6 py-6 font-semibold text-lg text-blue-800 underline">
+                      <a href={`https://github.com/${entry.participant}`} target="_blank" rel="noopener noreferrer">
+                        {entry.participant}
+                      </a>
+                    </td>
                   </tr>
                 ))}
               </tbody>

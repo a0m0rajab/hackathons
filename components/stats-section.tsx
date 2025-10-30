@@ -1,11 +1,10 @@
 import { Card } from "@/components/ui/card"
 
 const stats = [
-  { icon: "👩‍💻", label: "Participants", value: "68", color: "oklch(0.75_0.15_290)" },
-  { icon: "📦", label: "Repositories Contributed", value: "15", color: "oklch(0.82_0.12_30)" },
-  { icon: "🔀", label: "PRs Opened", value: "54", color: "oklch(0.85_0.10_180)" },
-  { icon: "✅", label: "PRs Accepted", value: "48", color: "oklch(0.80_0.12_210)" },
-  { icon: "🌈", label: "New Projects Started", value: "9", color: "oklch(0.88_0.08_330)" },
+  { icon: "🌟", label: "Applicant", value: "115", color: "oklch(0.85_0.10_220)" },
+  { icon: "🧑‍💻", label: "Participants", value: "70", color: "oklch(0.75_0.15_290)" },
+  { icon: "📂", label: "Repositories Contributed", value: "4", color: "oklch(0.82_0.12_30)" },
+  { icon: "�", label: "PRs Opened", value: "22", color: "oklch(0.85_0.10_180)" },
 ]
 
 export function StatsSection() {
@@ -14,10 +13,10 @@ export function StatsSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-[oklch(0.45_0.15_290)]">Hackathon Highlights 💫</h2>
-          <p className="text-lg text-muted-foreground">Our community in numbers — every PR is a spark of kindness 💕</p>
+          <p className="text-lg text-muted-foreground">Our community in numbers, every PR is a spark of kindness 💕</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 justify-around content-around">
           {stats.map((stat, index) => (
             <Card
               key={index}

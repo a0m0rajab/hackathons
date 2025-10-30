@@ -1,13 +1,12 @@
 import { Card } from "@/components/ui/card"
 
 const scheduleItems = [
-  { time: "09:00 AM", event: "☀️ Kickoff & Welcome Circle" },
-  { time: "10:00 AM", event: '💡 Workshop: "How to Make Your First Pull Request"' },
-  { time: "01:00 PM", event: "🍕 Lunch Break + Fun Chat" },
-  { time: "02:00 PM", event: "🧑‍💻 Hacking Time Begins!" },
-  { time: "06:00 PM", event: "☕ Midpoint Check-In & Demos" },
-  { time: "08:00 PM", event: "🌟 Project Showcase & Winner Announcements" },
-  { time: "09:00 PM", event: "🎵 Closing Celebration" },
+  { time: "09:00 AM", event: "☕ Check-in & morning coffee/breakfast" },
+  { time: "10:00 AM", event: "💬 Intro to Hacktoberfest + participant meet & greet 🤝" },
+  { time: "11:15 AM", event: "🧠 showcase & live demo on how to contribute 👩‍💻👨‍💻" },
+  { time: "12:00 PM", event: "🍴 Lunch break (fuel up, hackers 😋)" },
+  { time: "01:00 PM", event: "💻 Contribution time, code, commit, and collaborate with mentors 👏" },
+  { time: "04:30 PM", event: "🎉 Wrap-up session, share wins, feedback, and celebrate your hacks 🌟" },
 ]
 
 export function ScheduleSection() {

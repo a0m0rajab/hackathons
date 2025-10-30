@@ -1,19 +1,10 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { leaderboard } from "@/data/contributions"
 
-const fullLeaderboard = [
-  { rank: "🥇", participant: "@sarah-dev", prsOpened: 7, prsAccepted: 7 },
-  { rank: "🥈", participant: "@leo-byte", prsOpened: 6, prsAccepted: 5 },
-  { rank: "🥉", participant: "@nour-js", prsOpened: 5, prsAccepted: 5 },
-  { rank: "🌸", participant: "@omar-ai", prsOpened: 4, prsAccepted: 4 },
-  { rank: "🌷", participant: "@hana-creates", prsOpened: 3, prsAccepted: 3 },
-  { rank: "🌼", participant: "@maya-code", prsOpened: 3, prsAccepted: 2 },
-  { rank: "🌻", participant: "@alex-dev", prsOpened: 2, prsAccepted: 2 },
-  { rank: "🌺", participant: "@zara-tech", prsOpened: 2, prsAccepted: 2 },
-  { rank: "🪷", participant: "@kai-builds", prsOpened: 2, prsAccepted: 1 },
-  { rank: "🌹", participant: "@emma-codes", prsOpened: 1, prsAccepted: 1 },
-]
+
+const fullLeaderboard = leaderboard;
 
 export default function LeaderboardPage() {
   return (
@@ -40,14 +31,9 @@ export default function LeaderboardPage() {
               <table className="w-full">
                 <thead>
                   <tr className="bg-gradient-to-r from-[oklch(0.92_0.08_290)] to-[oklch(0.90_0.10_330)]">
-                    <th className="px-6 py-5 text-left text-base font-bold text-[oklch(0.40_0.15_290)]">Rank</th>
+                    <th className="px-6 py-5 text-left text-base font-bold text-[oklch(0.40_0.15_290)]">Emoji</th>
+                    <th className="px-6 py-5 text-left text-base font-bold text-[oklch(0.40_0.15_290)]">Name</th>
                     <th className="px-6 py-5 text-left text-base font-bold text-[oklch(0.40_0.15_290)]">Participant</th>
-                    <th className="px-6 py-5 text-center text-base font-bold text-[oklch(0.40_0.15_290)]">
-                      PRs Opened
-                    </th>
-                    <th className="px-6 py-5 text-center text-base font-bold text-[oklch(0.40_0.15_290)]">
-                      PRs Accepted
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -57,9 +43,14 @@ export default function LeaderboardPage() {
                       className="border-t border-border hover:bg-[oklch(0.98_0.02_290)] transition-colors"
                     >
                       <td className="px-6 py-6 text-3xl">{entry.rank}</td>
-                      <td className="px-6 py-6 font-semibold text-foreground text-lg">{entry.participant}</td>
-                      <td className="px-6 py-6 text-center font-bold text-primary text-lg">{entry.prsOpened}</td>
-                      <td className="px-6 py-6 text-center font-bold text-secondary text-lg">{entry.prsAccepted}</td>
+                      <td className="px-6 py-6 font-semibold text-lg text-foreground">
+                        {entry.name ? entry.name : "Anonymous"}
+                      </td>
+                      <td className="px-6 py-6 font-semibold text-lg text-blue-800 underline">
+                        <a href={`https://github.com/${entry.participant}`} target="_blank" rel="noopener noreferrer">
+                          {entry.participant}
+                        </a>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
