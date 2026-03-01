@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/hero-section"
+import { EventImagesSection } from "@/components/event-images-section"
 import { ScheduleSection } from "@/components/schedule-section"
 import { StatsSection } from "@/components/stats-section"
 import { LeaderboardSection } from "@/components/leaderboard-section"
@@ -11,6 +12,7 @@ export default function Page() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <EventImagesSection />
       <ScheduleSection />
       <StatsSection />
       <LeaderboardSection />
